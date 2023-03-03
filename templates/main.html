@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>turklang-7</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+
+  <form class="root" method="post">
+    <div class="lang-select">
+      <select name="in_lang" id="in_lang" >
+        <option value='ru'>Русский</option>
+      </select>
+      <select name="out_lang" id="out_lang" >
+        <option value='tat'>Татарский</option>
+        <option value='chv'>Чувашский</option>
+      </select>
+    </div>
+    <div class="main">
+      <div class="column">
+        <textarea name="in_text" id="input" placeholder="Введите текст"></textarea>
+        <button type="button" onclick="submit()">Перевести</button>
+      </div>
+        <div class="hide-loader" id="loader">
+        </div>
+      <div  class="column">
+        <textarea id="translate">{{result}}</textarea>
+      </div>
+    </div>
+  </form>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="{{url_for('static', filename='js/script.js')}}"></script>
+</body>
+</html>
